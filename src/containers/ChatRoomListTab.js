@@ -193,7 +193,7 @@ class ChatRoomListTab extends React.PureComponent {
     let toId = users["toId"];
     let fromId = users["fromId"];
     let chatRoomId = FormatChecker.makeChatRoomId(toId, fromId);
-    let roUserId = toId === Firebase.uid() ? fromId : toId;
+    let roUserId = toId == Firebase.uid() ? fromId : toId;
 
     this.props.navigation.navigate("chatRoom", {
       toUserId: roUserId

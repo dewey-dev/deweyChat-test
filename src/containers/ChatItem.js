@@ -10,7 +10,7 @@ export default class ChatItem extends React.Component {
 
     return (
       <View style={styles.container}>
-        {fromId === Firebase.uid() ? (
+        {fromId == Firebase.uid() ? (
           <View style={styles.sendContainer}>
             <View style={styles.sendTextContainer}>
               <Text style={styles.sendText}>{message}</Text>

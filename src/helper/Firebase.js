@@ -1,7 +1,5 @@
 import firebase from "react-native-firebase";
 
-import RNFetchBlob from "react-native-fetch-blob";
-
 import store from "../store/store";
 import {
   recvAuthCheckResult,
@@ -65,6 +63,9 @@ export default class Firebase {
             email,
             infoForCreateUserToFirebase.profileImageUri
           );
+        })
+        .then(uid => {
+          return Firebase.getUserInfo(uid);
         })
         .then(() => {
           store.dispatch(recvAuthCheckResult(true));
@@ -135,7 +136,7 @@ export default class Firebase {
       ref
         .set(value)
         .then(() => {
-          resolve();
+          resolve(uid);
         })
         .catch(error => {
           reject(error);

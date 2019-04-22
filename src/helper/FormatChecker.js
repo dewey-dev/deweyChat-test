@@ -26,7 +26,7 @@ export default class FormatChecker {
   static validatePassword(password, confirmPassword) {
     var result = false;
     var message = "";
-    if (password === confirmPassword) {
+    if (password == confirmPassword) {
       result = true;
     } else {
       message = "비밀번호가 일치하지 않습니다.";

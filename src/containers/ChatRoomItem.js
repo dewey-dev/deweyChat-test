@@ -16,7 +16,7 @@ export default class ChatRoomItem extends React.Component {
     let fromId = chatRoomInfo.users.fromId;
     let myId = Firebase.uid();
 
-    let targetId = toId === myId ? fromId : toId;
+    let targetId = toId == myId ? fromId : toId;
     console.log("targetId", targetId);
 
     this.getUserInfoRef = firebase
